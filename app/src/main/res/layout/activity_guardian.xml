@@ -11,19 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:padding="20dp"
-        android:background="#fece2f"
-        >
+        android:background="#fece2f" >
 
         <ImageView
             android:id="@+id/idProfile"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/baseline_person_24"
-            android:layout_centerVertical="true"
-            />
+            android:layout_centerVertical="true" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/textProfile"
+            android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Abass Souleymane"
@@ -31,8 +29,7 @@
             android:fontFamily="@font/bungee"
             android:layout_toRightOf="@id/idProfile"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            />
+            android:layout_marginLeft="10dp" />
     </RelativeLayout>
 
     <LinearLayout
@@ -40,24 +37,23 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="20dp"
-        android:layout_marginTop="50dp"
-        >
+        android:layout_marginTop="50dp" >
 
         <ImageButton
-            android:id="@+id/imageButton1"
+            android:id="@+id/btn_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginRight="25dp"
-            android:contentDescription="Bouton enregistrer visiteur"
+            android:contentDescription="Bouton pour enregistrer visiteur"
             android:src="@drawable/baseline_person_add_72" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/btn_scan_qrcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:contentDescription="Bouton scanner"
+            android:contentDescription="Bouton pour scanner"
             android:src="@drawable/baseline_qr_code_scanner_72" />
     </LinearLayout>
 
@@ -66,24 +62,23 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="20dp"
-        android:layout_marginTop="15dp"
-        >
+        android:layout_marginTop="15dp" >
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btn_register_incident"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginRight="25dp"
-            android:contentDescription="Bouton signaler probleme"
+            android:contentDescription="Bouton pour signaler un incident"
             android:src="@drawable/baseline_report_problem_24" />
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/btn_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:contentDescription="Bouton deconnexion"
+            android:contentDescription="Bouton de deconnexion"
             android:src="@drawable/baseline_logout_72" />
     </LinearLayout>
 
