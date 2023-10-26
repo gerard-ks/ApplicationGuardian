@@ -40,7 +40,7 @@
         android:layout_marginTop="50dp" >
 
         <ImageButton
-            android:id="@+id/btn_register"
+            android:id="@+id/btn_register_visiteur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
