@@ -25,47 +25,50 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_margin="20dp"
         android:orientation="vertical">
 
+        <Spinner
+            android:id="@+id/dropdownPriorite"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:entries="@array/libelle_priorites" />
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/TypeIncident"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Type d'incident">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descIncident"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:id="@+id/spinnerIncident"
+        <TextView
+            android:id="@+id/error_text_incident"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:entries="@array/incidents"
-            />
-        <Spinner
-            android:id="@+id/spinnerPriorite"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:entries="@array/priorites"
-            />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
+            android:text="" />
 
 
         <Button
-            android:layout_width="match_parent"
+            android:id="@+id/btn_valider_incident"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Valider"
             android:textSize="18sp"
             android:backgroundTint="@color/black"
             android:textColor="@color/white"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="50dp"
             android:layout_marginBottom="5dp"
-            android:padding="20dp"
-            />
+            android:padding="20dp" />
     </LinearLayout>
 
 </LinearLayout>

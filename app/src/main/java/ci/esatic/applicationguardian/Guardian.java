@@ -2,6 +2,8 @@ package ci.esatic.applicationguardian;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -45,7 +47,50 @@ public class Guardian extends AppCompatActivity {
                 deconnexion(); // Appeler la fonction de déconnexion
             }
         });
+
+        // VISITEUR
+        registerVisiteur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pageVisiteur();
+            }
+        });
+
+        // INCIDENT
+        registerIncident.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pageIncident();
+            }
+        });
+
+        scanQR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pageScanQR();
+            }
+        });
+
+        String message = getIntent().getStringExtra("message");
+
+        // Vérifiez si un message a été passé et affichez-le dans une boîte de dialogue
+        if (message != null) {
+            afficherAlerte(message);
+        }
     }
+
+    private void afficherAlerte(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Gérer le clic sur le bouton OK si nécessaire
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
 
     private void deconnexion() {
         // Supprimer les données d'authentification des SharedPreferences
@@ -53,6 +98,7 @@ public class Guardian extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove("authToken");
         editor.remove("userName");
+
         editor.apply();
 
         // Rediriger l'utilisateur vers l'écran de connexion (ou une autre page d'accueil)
@@ -60,5 +106,22 @@ public class Guardian extends AppCompatActivity {
         startActivity(intent);
         finish(); // Terminer l'activité actuelle
     }
+
+    private void pageVisiteur(){
+        Intent intent = new Intent(this, Visiteur.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void pageIncident(){
+        Intent intent = new Intent(this, Incident.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void pageScanQR(){
+        return;
+    }
+
 
 }

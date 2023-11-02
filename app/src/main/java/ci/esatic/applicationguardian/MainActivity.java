@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 message = reponse.getMessage();
 
                 if (!response.isSuccessful()){
-                    testView.setText("Code if " + response.code());
+                    testView.setText("Code " + response.code());
                     return;
                 } else if (status == 0) {
                     error.setText(message);
@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("authToken", reponse.getAccess_token());
                     editor.putString("userName", reponse.getNom());
+                    editor.putInt("userId", reponse.getId_Utilisateur());
                     System.out.println(reponse.getNom());
                     editor.apply();
 

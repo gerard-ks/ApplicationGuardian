@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class Login {
 
     private Integer status;
+    private int id_Utilisateur;
     private String nom;
     private String message;
     private String email;
@@ -17,6 +18,9 @@ public class Login {
 
     public String getMessage() {
         return message;
+    }
+    public int getId_Utilisateur() {
+        return id_Utilisateur;
     }
 
     public Login(String email, String password) {
